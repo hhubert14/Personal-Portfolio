@@ -4,7 +4,7 @@ import { getArticleData } from "@/lib/articles"
 
 const Article = async ({ params }: { params: { slug: string } }) => {
   const articleData = await getArticleData(params.slug)
-  console.log(`params.slug: ${params.slug}`)
+  
   if (!articleData) {
     return <div>Article not found</div>;
   }
