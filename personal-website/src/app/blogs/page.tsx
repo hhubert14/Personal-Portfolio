@@ -1,23 +1,27 @@
-import Link from "next/link";
+import ArticleItemList from "@/components/ArticleListItem"
+import { getCategorisedArticles } from "@/lib/articles"
 
-const BlogIndex = () => {
-  const posts = [
-    { title: "First Post", slug: "first-post" },
-    { title: "Second Post", slug: "second-post" },
-  ];
+const HomePage = () => {
+  const articles = getCategorisedArticles()
 
+  console.log(articles)
   return (
-    <main>
-      <h1>Blog</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
-  );
-};
+    <section className="mx-auto w-11/12 md:w-1/2 mt-20 flex flex-col gap-16 mb-20">
+      <header className="font-cormorantGaramond font-light text-6xl text-neutral-900 text-center">
+        <h1>minimal blog</h1>
+      </header>
+      <section className="md:grid md:grid-cols-2 flex flex-col gap-10">
+        {articles !== null &&
+          Object.keys(articles).map((article) => (
+            <ArticleItemList
+              category={article}
+              articles={articles[article]}
+              key={article}
+            />
+          ))}
+      </section>
+    </section>
+  )
+}
 
-export default BlogIndex;
+export default HomePage

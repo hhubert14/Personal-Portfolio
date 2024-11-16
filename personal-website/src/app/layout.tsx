@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Cormorant_Garamond, Poppins } from "next/font/google"
 import "./globals.css";
 import Link from "next/link";
 
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant-garamond",
+  weight: ["400"],
+})
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "600"],
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="bg-gray-900 p-4">
           <div className="flex">
