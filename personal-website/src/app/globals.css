@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #212121;
+  color: white;
+}
+
+nav {
+  background-color: #f9f9f9;
+  color: black;
+}
+
+nav.dark-mode {
+  background-color: #171717;
+  color: white;
+}
+
 .article {
   @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-20;
 }
