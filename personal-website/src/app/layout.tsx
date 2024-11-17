@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} bg-amber-100 antialiased`}
       >
         <nav className="bg-gray-900 p-4">
           <div className="flex">
