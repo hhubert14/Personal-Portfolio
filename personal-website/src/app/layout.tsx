@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Cormorant_Garamond, Poppins } from "next/font/google"
+import { Cormorant_Garamond, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import DarkModeToggle from "@/components/DarkModeToggle";
-import Providers from "@/app/Providers";
+import Providers from "@/components/Providers"
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -40,11 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Providers>
-        <body
-          className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+    <html lang="en" suppressHydrationWarning>
+      
+      <body
+        className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Providers>
           <nav className="p-4">
             <div className="flex">
               <ul className="flex justify-between w-2/3">
@@ -55,13 +56,13 @@ export default function RootLayout({
                 <li><Link href="/blogs">Blogs</Link></li>
                 <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
-                <li><DarkModeToggle /></li>
+                <li><ThemeSwitch /></li>
               </ul>
             </div>
           </nav>
           {children}
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }

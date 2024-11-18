@@ -2,54 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: white;
-  color: black;
+.light body {
+  @apply bg-white transition-colors duration-1000
 }
 
-body.dark-mode {
-  background-color: #212121;
-  color: white;
+.light nav {
+  @apply bg-[#f9f9f9] transition-colors duration-1000
 }
 
-nav {
-  background-color: #f9f9f9;
-  color: black;
+.dark body {
+  @apply bg-[#212121] transition-colors duration-1000
 }
 
-nav.dark-mode {
-  background-color: #171717;
-  color: white;
+.dark nav {
+  @apply bg-[#171717] transition-colors duration-1000
 }
 
 .article {
-  @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-20;
+  @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-20
 }
 
 .article > h1 {
-  @apply font-cormorantGaramond text-4xl text-center tracking-tight;
+  @apply font-cormorantGaramond text-4xl text-center tracking-tight
 }
 
 .article > h2 {
-  @apply font-cormorantGaramond text-3xl tracking-tight;
+  @apply font-cormorantGaramond text-3xl tracking-tight
 }
 
 .article > ol {
-  @apply list-decimal flex flex-col mx-10 gap-2;
+  @apply list-decimal flex flex-col mx-10 gap-2
 }
 
 .article > ul {
-  @apply list-disc flex flex-col mx-10 gap-2;
+  @apply list-disc flex flex-col mx-10 gap-2
 }
 
 .article > pre {
-  @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll;
+  @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll
 }
 
 .article > blockquote {
-  @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40;
+  @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40
 }
 
 .article > p > img {
-  @apply w-1/2 mx-auto;
+  @apply w-1/2 mx-auto
 }
