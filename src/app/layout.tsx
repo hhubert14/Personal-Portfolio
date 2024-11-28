@@ -44,6 +44,7 @@ export default function RootLayout({
                 <li><Link href="/blogs">Blogs</Link></li>
                 <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/beyond-work">Beyond Work</Link></li>
                 <li><ThemeSwitch /></li>
               </ul>
             </div>
