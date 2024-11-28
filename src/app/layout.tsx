@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Cormorant_Garamond, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -32,7 +31,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       
       <body
-        className={`${cormorantGaramond.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${poppins.variable} antialiased`}
       >
         <Providers>
           <nav className="p-4">
