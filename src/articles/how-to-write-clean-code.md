@@ -53,14 +53,14 @@ Deep nesting makes code harder to read and maintain.
 ```javascript
 // Bad
 if (condition) {
-  if (anotherCondition) {
-    // ...
-  }
+    if (anotherCondition) {
+        // ...
+    }
 }
 
 // Good
 if (condition && anotherCondition) {
-  // ...
+    // ...
 }
 ```
 

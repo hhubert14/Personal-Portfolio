@@ -1,10 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  images: {
-    domains: ['data.typeracer.com'],
-  },
-};
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "data.typeracer.com",
+                pathname: "/misc/badge",
+            },
+        ],
+    },
+    /* other config options here */
+}
 
-export default nextConfig;
+export default nextConfig
