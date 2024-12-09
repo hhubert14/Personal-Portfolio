@@ -62,7 +62,13 @@ git rebase bugFix
 
 ![Git Rebase](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnVkN3gwYnF1bTlndnB0emNweWpvN2VvZzFoOWE4c2IxMmJubTNmbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/J8I0qvVyeoMIgiO02I/giphy.gif)
 
-Note: `git rebase -i <branch>` (e.g., git rebase -i HEAD~4) allows you to reorder commits, add/drop commits, etc.
+Note: The git rebase -i <branch> command (e.g., git rebase -i HEAD~4) allows you to interactively reorder commits, edit commit messages, squash commits, drop commits, and more.
+
+Note: You can specify two branches after the git rebase command to rebase one branch onto another. The syntax is:
+
+```bash
+git rebase <upstream-branch> <working-branch>
+```
 
 ### **Detach HEAD**
 
@@ -142,8 +148,158 @@ git describe main
 
 v1_2_gC2
 
+
 ```bash
 git describe side
 ```
 
 v2_1_gC4
+
+Note: The output from `git describe branch` is in the form `<closest tag>_<number of commits since tag>_g<abbreviated commit hash>`
+
+### **Git Checkout With Multiple Parents**
+
+The number after ^ specifies which parant after a merge commit. So checkout branch^ refers to first parent, checkout branch^2 refers to second parent, etc.
+
+```bash
+git checkout main^
+```
+
+![Git Checkout](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHV2d25scmh3YWQzNnE4dm14eWtzYWtnMGttMXU3YjdxdTdtd2ttNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8w7ZRvXJrpvSIj5gAu/giphy.gif)
+
+```bash
+git checkout main^2
+```
+
+![Git Checkout](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGphOGVvajluY3UzdDFkMmhxcGw1Yng3a3ppc2pxMmx4M3NmNDZ1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gIotpF9uzdLBIXgbL7/giphy.gif)
+
+```bash
+git checkout HEAD~; git checkout HEAD^2; git checkout HEAD~2
+```
+
+![Git Checkout](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmdqeHV5Zmg3eG50c21sbWNyb2NoYTNyamZoeGJmaGYydndpY3V2biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MKIqnU11caicXPJpqA/giphy.gif)
+
+```bash
+git checkout HEAD~^2~2
+```
+
+![Git Checkout](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWF3eTZ1NThvZm8zMHVuMWN1ODhsdjRvN3duaHU2ZjZlaXdud2pnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/76hnxa0b37KGZRArWn/giphy.gif)
+
+### **Git Clone**
+
+```bash
+git clone
+```
+
+![Git Clone](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3FvbGdzeW53aWpzdml0dzdqazhtM3V2bzdkdXFvNGxvbWFhdnVybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JTy1hrfdwSiiCkz0e9/giphy.gif)
+
+### **Remote Branches**
+
+Remote branches have the special property that when you check them out, you are put into detached HEAD mode. Git does this on purpose because you can't work on these branches directly; you have to work elsewhere and then share your work with the remote (after which your remote branches will be updated).
+
+```bash
+git checkout o/main; git commit
+```
+
+![Git Checkout](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTU2OGpsMWd6bHIybXlzOHFmYnZqdHRsMXJ2OWk0ZjVybTA5bmJsaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YyYIB5CZZ3FQMMkO8x/giphy.gif)
+
+### **Git Fetch**
+
+```bash
+git fetch
+```
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmF2eGxvbWNxOHo3a2QxMjloazdyM3VmbTl0ZWx3NWdxcXFubGozYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7R6gwKP4Q30Tt9Wv0w/giphy.gif)
+
+### **Git Pull**
+
+```bash
+git pull
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDJ0MGQ5MmcxYXdhcWQ2bmZvOWxibWZxZTIxNHN2NmkydHBpM3B0MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9HyrXXBfqO0JGTaykT/giphy.gif)
+
+Note: This is the same as git fetch; git merge o/main.
+
+### **Git Push**
+
+```bash
+git push
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW5vcTFsMWU2dTFnZmU4MmVqNmVqNGNkb2dqc2pjcWhoaWYweDZybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0PkyP7WTqAczDWwVar/giphy.gif)
+
+Note: To push a branch that does not exist on the remote without checking out the branch, you can use the following command:
+
+```bash
+git push origin <branch>
+```
+
+### **Diverged Work**
+
+These are some ways to base your work off of the most recent version of the remote branch:
+
+
+```bash
+git fetch; git rebase o/main; git push
+```
+
+or
+
+```bash
+git pull --rebase; git push
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpld3BkZWN1eHVpYmF1NG41d290ajM4ejQzOXQ2eG5jemc3YjZpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1zUbPGVIX8DEeSfSA/giphy.gif)
+
+```bash
+git fetch; git merge o/main; git push
+```
+
+or
+
+```bash
+git pull; git push
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG02ZHQwZno5Z2x0bHNqb293c3hvcmFhbGh6NzA5NmRib3RnbWpnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EozbvSLB1ZGG5i0u12/giphy.gif)
+
+### **Remote Tracking**
+
+During a clone, git creates a remote branch for every branch on the remote (aka branches like o/main).
+
+You can create a new branch that tracks a specific remote branch using the following command:
+
+```bash
+git checkout -b <branch> <remote>/<remote-branch>
+```
+
+```bash
+git checkout -b foo o/main; git pull
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXlxZmUzeWg0dTY4MGVoMnc5aTdlNmo4Y2Jqd283NHlvbDlmMXNmaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nF0sSfWaAHLxnYKEHS/giphy.gif)
+
+```bash
+git checkout -b foo o/main; git commit; git push
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjhkMzI5YWhid2x4ZmtxZTM3MHp5YWkzNml0dzdiYXg3aXppMm92bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V3PscPqpzxoSoO6ZnJ/giphy.gif)
+
+Another way to set remote tracking on a branch is to simply use the git branch -u option. Running
+
+```bash
+git branch -u o/main foo
+```
+
+will set the foo branch to track o/main. If foo is currently checked out you can even leave it off:
+
+```bash
+git branch -u o/main
+```
+
+```bash
+git branch -u o/main foo; git commit; git push
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXZvbXQ4NGhvYmhqeHF3dHkwb25hbHgyNnFiYWN4Y3BnemJ2NzNkbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fs88FmogiYCBO6QxoI/giphy.gif)
