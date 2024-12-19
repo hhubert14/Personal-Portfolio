@@ -1,15 +1,14 @@
+import Hero from "../components/main/Hero";
+
 export default function Home() {
     return (
-        <>
-            <header>
-                <h1>Hubert Huang</h1>
-            </header>
-            <main>
-                <p>
-                    Hello, I’m a Computer Science student specializing in AI and
-                    machine learning.
-                </p>
-            </main>
-        </>
-    )
-}
+      <main className="h-full w-full">
+        <div className="flex flex-col gap-20">
+          <Hero />
+          {/* <Skills />
+          <Encryption />
+          <Projects /> */}
+        </div>
+      </main>
+    );
+  }
