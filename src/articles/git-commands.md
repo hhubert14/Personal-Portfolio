@@ -229,12 +229,6 @@ git push
 
 ![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW5vcTFsMWU2dTFnZmU4MmVqNmVqNGNkb2dqc2pjcWhoaWYweDZybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0PkyP7WTqAczDWwVar/giphy.gif)
 
-Note: To push a branch that does not exist on the remote without checking out the branch, you can use the following command:
-
-```bash
-git push origin <branch>
-```
-
 ### **Diverged Work**
 
 These are some ways to base your work off of the most recent version of the remote branch:
@@ -303,3 +297,111 @@ git branch -u o/main foo; git commit; git push
 ```
 
 ![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXZvbXQ4NGhvYmhqeHF3dHkwb25hbHgyNnFiYWN4Y3BnemJ2NzNkbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fs88FmogiYCBO6QxoI/giphy.gif)
+
+### **Push arguments**
+
+To push a branch that does not exist on the remote without checking out the branch, you can use the following command:
+
+```bash
+git push origin <branch>
+```
+
+```bash
+git checkout C0; git push origin main
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTMxdjdvdGhyeHR1ZHV2a2FtdG02eGZwNHJzYTNmM2xhZDkybmVmbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CdSOn4mqQbP3TBYCLh/giphy.gif)
+
+This command allows you to push commits from a local branch (`<source>`) to a different branch (`<destination>`) on the remote repository (origin):
+
+```bash
+git push origin <source>:<destination>
+```
+
+```bash
+git push origin foo^:main
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmo0dHlwOHM4Y2llNmYwdHRpZmRpOWtsZGRzMXQweHE4N3BwYWplYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BzYeueETS5LxSqiByf/giphy.gif)
+
+It can also create a branch on the remote if it doesn't exist:
+
+```bash
+git push origin main:newBranch
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWVsemtjMDNhdXB4anFxN2xmNTZvb3Y2dXc0M3o0dnF3eDhuMGtuOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Li8W9MGc6ROlUZ7n9u/giphy.gif)
+
+### **Fetch arguments**
+
+To fetch a branch that on the remote without checking out the branch, you can use the following command:
+
+```bash
+git fetch origin <branch>
+```
+
+```bash
+git fetch origin foo
+```
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExajlsd3dkcGs3c3dhdmVtNWRlZGQ4eDRteXIwZGVlOTZtaWQ2YmtteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aFKCraRutn3NvGCJLP/giphy.gif)
+
+This command allows you to fetch commits from a remote branch (`<source>`) to a local branch (`<destination>`):
+
+```bash
+git fetch origin <source>:<destination>
+```
+
+```bash
+git fetch origin C2:bar
+```
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG1pam9vcWw2dGJ0dGM3ZmZvYWx0cHdrNmdjYm13emg1b3N6aHVycCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gvb9AYK4aMSQPA7pTH/giphy.gif)
+
+It can also create a branch on locally if it doesn't exist:
+
+```bash
+git fetch origin C2:bar
+```
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXMyNzUycTNmNDk1cjIxbDlzOGZpemQweGoyY2F3aGlrZHphZTZjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LYVF6aoCEoCHuK85j0/giphy.gif)
+
+No arguments mean it downloads all the commits from the remote onto all the remote branches:
+
+```bash
+git fetch
+```
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXZvc21oOGV6cXRwN2FxaHc5dzZ0ZzU0aWgxbTYxazYxaTluYXg4aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ODfqwviFZL9flmFvmI/giphy.gif)
+
+### **Oddities of Source**
+
+If you leave out `<source>` for `git push origin <source>:<destination>`, you can delete a branch on the remote:
+
+```bash
+git push origin :foo
+```
+
+![Git push](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDB5cGxpMTdzZGcxOXMxdmhvaXZ1MDF4dHhucGx5cXo2bG14b25peCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wb8BrpP7vd2Df4TaU0/giphy.gif)
+
+If you leave out `<source>` for `git fetch origin <source>:<destination>`, you can create a new branch locally:
+
+![Git fetch](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnhsaWMyMWJ4bWYydjJ3MDR2dDM4am1iMzczdjZyNDU1dWZ1MWhzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6EVu9aIZaMFNdVCB1u/giphy.gif)
+
+### **Pull Arguments**
+
+git pull origin foo is equal to git fetch origin foo; git merge o/foo
+
+git pull origin bar:bugFix is equal to git fetch origin bar:bugFix; git merge bugFix
+
+```bash
+git pull origin main
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjZxdzEyY3Nqdmw5bjVtaTBhcXVnd2JpeDBzNXFpaDk3dHNxM3FrZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G0VC61jeZKnVrMeLYZ/giphy.gif)
+
+```bash
+git pull origin main:foo
+```
+
+![Git pull](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTNsd3MycTMxbWg2Mjh1YW84MzhwcDRyNTQzbm1mNWNxNzJvcGI3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tDR4S4XaKb4hHyc456/giphy.gif)
