@@ -148,7 +148,6 @@ git describe main
 
 v1_2_gC2
 
-
 ```bash
 git describe side
 ```
@@ -232,7 +231,6 @@ git push
 ### **Diverged Work**
 
 These are some ways to base your work off of the most recent version of the remote branch:
-
 
 ```bash
 git fetch; git rebase o/main; git push

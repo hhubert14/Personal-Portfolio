@@ -48,51 +48,51 @@ export interface LichessUserDataType {
 
 export interface MonkeytypeUserDataType {
     data: {
-        name: string;
+        name: string
         typingStats: {
-            completedTests: number;
-            startedTests: number;
-            timeTyping: number;
-        };
+            completedTests: number
+            startedTests: number
+            timeTyping: number
+        }
         personalBests: {
             time: {
                 [key: string]: {
-                    acc: number;
-                    consistency: number;
-                    difficulty: string;
-                    lazyMode: boolean;
-                    language: string;
-                    punctuation: boolean;
-                    raw: number;
-                    wpm: number;
-                    timestamp: number;
-                    numbers?: boolean;
-                }[];
-            };
+                    acc: number
+                    consistency: number
+                    difficulty: string
+                    lazyMode: boolean
+                    language: string
+                    punctuation: boolean
+                    raw: number
+                    wpm: number
+                    timestamp: number
+                    numbers?: boolean
+                }[]
+            }
             words: {
                 [key: string]: {
-                    acc: number;
-                    consistency: number;
-                    difficulty: string;
-                    lazyMode: boolean;
-                    language: string;
-                    punctuation: boolean;
-                    raw: number;
-                    wpm: number;
-                    timestamp: number;
-                    numbers?: boolean;
-                }[];
-            };
-        };
+                    acc: number
+                    consistency: number
+                    difficulty: string
+                    lazyMode: boolean
+                    language: string
+                    punctuation: boolean
+                    raw: number
+                    wpm: number
+                    timestamp: number
+                    numbers?: boolean
+                }[]
+            }
+        }
         allTimeLbs: {
             time: {
                 [key: string]: {
                     [key: string]: {
-                        rank: number;
-                        count: number;
-                    };
-                };
-            };
-        };
-    };
+                        rank: number
+                        count: number
+                    }
+                }
+            }
+        }
+    }
 }

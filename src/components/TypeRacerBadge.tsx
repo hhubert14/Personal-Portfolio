@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 const TypeRacerBadge = () => {
     return (
@@ -17,7 +17,7 @@ const TypeRacerBadge = () => {
                 />
             </div>
         </a>
-    );
-};
+    )
+}
 
-export default TypeRacerBadge;
+export default TypeRacerBadge

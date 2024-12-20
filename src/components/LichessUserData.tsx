@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 import { LichessUserDataType } from "@/types"
 
 const LichessUserData = () => {
-
     const [userData, setUserData] = useState<LichessUserDataType | null>(null)
 
     const username = "Regnix"
@@ -23,37 +22,19 @@ const LichessUserData = () => {
             })
     }, [apiUrl])
 
-    const timeControls = [
-        "bullet",
-        "blitz",
-        "rapid",
-        "classical",
-    ]
+    const timeControls = ["bullet", "blitz", "rapid", "classical"]
 
-    const variants = [
-        "chess960",
-        "antichess",
-        "atomic",
-        "horde",
-        "crazyhouse",
-    ]
+    const variants = ["chess960", "antichess", "atomic", "horde", "crazyhouse"]
 
-    const puzzles = [
-        "puzzle",
-        "storm",
-        "racer", 
-        "streak",
-    ]
-    
+    const puzzles = ["puzzle", "storm", "racer", "streak"]
+
     return (
         <div>
             <h1>Lichess Profile</h1>
-            {userData && 
+            {userData && (
                 <div>
                     <h2>
-                        <a
-                            href="https://lichess.org/@/Regnix"
-                        >
+                        <a href="https://lichess.org/@/Regnix">
                             {userData.username}
                         </a>
                     </h2>
@@ -62,9 +43,17 @@ const LichessUserData = () => {
                     <div className="flex flex-row">
                         {timeControls.map((timeControl) => (
                             <div key={timeControl} className="border mx-auto">
-                                <h2>{timeControl.charAt(0).toUpperCase() + timeControl.slice(1)}</h2>
-                                <p>Rating: {userData.perfs[timeControl].rating}</p>
-                                <p>Number of Games: {userData.perfs[timeControl].games}</p>
+                                <h2>
+                                    {timeControl.charAt(0).toUpperCase() +
+                                        timeControl.slice(1)}
+                                </h2>
+                                <p>
+                                    Rating: {userData.perfs[timeControl].rating}
+                                </p>
+                                <p>
+                                    Number of Games:{" "}
+                                    {userData.perfs[timeControl].games}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -72,9 +61,15 @@ const LichessUserData = () => {
                     <div className="flex flex-row">
                         {variants.map((variant) => (
                             <div key={variant} className="border mx-auto">
-                                <h2>{variant.charAt(0).toUpperCase() + variant.slice(1)}</h2>
+                                <h2>
+                                    {variant.charAt(0).toUpperCase() +
+                                        variant.slice(1)}
+                                </h2>
                                 <p>Rating: {userData.perfs[variant].rating}</p>
-                                <p>Number of Games: {userData.perfs[variant].games}</p>
+                                <p>
+                                    Number of Games:{" "}
+                                    {userData.perfs[variant].games}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -82,16 +77,32 @@ const LichessUserData = () => {
                     <div className="flex flex-row">
                         {puzzles.map((puzzle) => (
                             <div key={puzzle} className="border mx-auto">
-                                <h2>{puzzle.charAt(0).toUpperCase() + puzzle.slice(1)}</h2>
-                                {userData.perfs[puzzle].rating && <p>Rating: {userData.perfs[puzzle].rating}</p>}
-                                {userData.perfs[puzzle].games && <p>Number of Games: {userData.perfs[puzzle].games}</p>}
-                                {userData.perfs[puzzle].runs && <p>Runs: {userData.perfs[puzzle].runs}</p>}
-                                {userData.perfs[puzzle].score && <p>Score: {userData.perfs[puzzle].score}</p>}
+                                <h2>
+                                    {puzzle.charAt(0).toUpperCase() +
+                                        puzzle.slice(1)}
+                                </h2>
+                                {userData.perfs[puzzle].rating && (
+                                    <p>
+                                        Rating: {userData.perfs[puzzle].rating}
+                                    </p>
+                                )}
+                                {userData.perfs[puzzle].games && (
+                                    <p>
+                                        Number of Games:{" "}
+                                        {userData.perfs[puzzle].games}
+                                    </p>
+                                )}
+                                {userData.perfs[puzzle].runs && (
+                                    <p>Runs: {userData.perfs[puzzle].runs}</p>
+                                )}
+                                {userData.perfs[puzzle].score && (
+                                    <p>Score: {userData.perfs[puzzle].score}</p>
+                                )}
                             </div>
                         ))}
                     </div>
                 </div>
-            }
+            )}
         </div>
     )
 }
