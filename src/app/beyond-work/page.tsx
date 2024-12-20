@@ -1,6 +1,6 @@
-import TypeRacerBadge from "@/components/TypeRacerBadge"
-import LichessUserData from "@/components/LichessUserData"
-import MonkeytypeUserData from "@/components/MonkeytypeUserData"
+import TypeRacerBadge from "@/components/beyond-work/TypeRacerBadge"
+import LichessUserData from "@/components/beyond-work/LichessUserData"
+import MonkeytypeUserData from "@/components/beyond-work/MonkeytypeUserData"
 
 const BeyondWork = () => {
     return (

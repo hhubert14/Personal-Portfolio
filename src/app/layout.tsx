@@ -69,12 +69,6 @@
 //     )
 // }
 
-// import dynamic from 'next/dynamic';
-
-// const StarsCanvas = dynamic(() => import('../components/main/StarBackground'), {
-//   ssr: false,
-// });
-
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -85,7 +79,7 @@ import Footer from "@/components/main/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-    title: "Space Portfolio",
+    title: "Personal Portfolio",
     description: "This is my portfolio",
 }
 
