@@ -20,7 +20,7 @@ const Sidebar = ({ headings }: Props) => {
 
     return (
         <div
-            className={`fixed top-16 left-0 h-[calc(100%-4rem)] flex flex-col text-white p-4 pl-2 bg-black bg-opacity-75 shadow-[0px_0px_25px_25px_rgba(0,0,0,0.75)] transition-transform duration-300 ${
+            className={`fixed w-1/4 top-16 left-0 h-[calc(100%-4rem)] flex flex-col text-white p-4 pl-2 bg-black bg-opacity-75 shadow-[0px_0px_25px_25px_rgba(0,0,0,0.75)] transition-transform duration-300 ${
                 isCollapsed ? "-translate-x-full" : "translate-x-0"
             }`}
         >
