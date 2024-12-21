@@ -12,7 +12,7 @@ const Article = async ({ params }: { params: { slug: string } }) => {
     }
 
     return (
-        <div className="flex flex-row">
+        <div className="flex flex-row overflow-y-auto">
             <Sidebar headings={articleData.headings} />
             <section className="mx-auto w-full md:w-3/4 mt-20 flex flex-col gap-5 text-white bg-black bg-opacity-75 p-10 shadow-[0px_0px_25px_25px_rgba(0,0,0,0.75)]">
                 <div className="flex justify-between font-poppins">
@@ -27,11 +27,12 @@ const Article = async ({ params }: { params: { slug: string } }) => {
                 </div>
                 <article
                     className="article p-5"
-                    dangerouslySetInnerHTML={{ __html: articleData.contentHtml }}
+                    dangerouslySetInnerHTML={{
+                        __html: articleData.contentHtml,
+                    }}
                 />
             </section>
         </div>
-        
     )
 }
 

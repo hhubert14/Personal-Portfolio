@@ -89,9 +89,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="en" className="scrollbarThin">
             <body
-                className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
+                className={`${inter.className} bg-[#030014] overflow-y-auto overflow-x-hidden`}
             >
                 <StarsCanvas />
                 <Navbar />

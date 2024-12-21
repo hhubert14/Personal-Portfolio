@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { PluginAPI } from "tailwindcss/types/config"
 
 const config: Config = {
     content: [
@@ -16,7 +17,29 @@ const config: Config = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }: PluginAPI) {
+            const newUtilities = {
+                ".scrollbarThin": {
+                    scrollbarColor: "rgb(255 255 255) black",
+                },
+                ".scrollbar-webkit": {
+                    "&::-webkit-scrollbar": {
+                        width: "8px",
+                    },
+                    "&::-webkit-scrollbar-track": {
+                        background: "white",
+                    },
+                    "&::-webkit-scrollbar-thumb": {
+                        backgroundColor: "rgb(31 41 55)",
+                        borderRadius: "20px",
+                        border: "1px solid white",
+                    },
+                },
+            }
+            addUtilities(newUtilities)
+        },
+    ],
     darkMode: "class",
 }
 

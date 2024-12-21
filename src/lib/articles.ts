@@ -4,7 +4,7 @@ import path from "path"
 import moment from "moment"
 import { remark } from "remark"
 import html from "remark-html"
-import remarkHeadingId from 'remark-heading-id';
+import remarkHeadingId from "remark-heading-id"
 
 import type { ArticleItem } from "@/types"
 
@@ -59,21 +59,26 @@ export const getCategorisedArticles = (): Record<string, ArticleItem[]> => {
 }
 
 const extractHeadings = (markdownContent: string) => {
-    const headings = [];
-    const lines = markdownContent.split("\n");
+    const headings = []
+    const lines = markdownContent.split("\n")
 
     for (const line of lines) {
-        const match = line.match(/^(#{1,6})\s+(.*)/);
+        const match = line.match(/^(#{1,6})\s+(.*)/)
         if (match) {
-            const level = match[1].length; // The number of `#` characters indicates the level
-            const text = match[2].trim();
-            const id = "user-content-" + text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-            headings.push({ text, id, level });
+            const level = match[1].length // The number of `#` characters indicates the level
+            const text = match[2].trim()
+            const id =
+                "user-content-" +
+                text
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^a-z0-9-]/g, "")
+            headings.push({ text, id, level })
         }
     }
 
-    return headings;
-};
+    return headings
+}
 
 export const getArticleData = async (id: string) => {
     const fullPath = path.join(articlesDirectory, `${id}.md`)
@@ -85,7 +90,6 @@ export const getArticleData = async (id: string) => {
 
     const headings = extractHeadings(fileContents)
     console.log(`headings: ${JSON.stringify(headings)}`)
-
 
     const processedContent = await remark()
         .use(remarkHeadingId, { defaults: true })
