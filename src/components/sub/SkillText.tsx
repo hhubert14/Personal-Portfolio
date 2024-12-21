@@ -17,14 +17,14 @@ const SkillText = () => {
             >
                 <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
                 <h1 className="Welcome-text text-[13px]">
-                    Think better with Next js 13
+                    Building Smarter Solutions with Modern Technology
                 </h1>
             </motion.div>
             <motion.div
                 variants={slideInFromLeft(0.5)}
-                className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
+                className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-5"
             >
-                Making apps with modern technologies
+                My Skills
             </motion.div>
             <motion.div
                 variants={slideInFromRight(0.5)}
