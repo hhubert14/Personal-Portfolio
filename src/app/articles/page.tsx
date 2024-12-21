@@ -1,4 +1,4 @@
-import ArticleItemList from "@/components/ArticleListItem"
+import ArticleItemList from "@/components/articles/ArticleListItem"
 import { getCategorisedArticles } from "@/lib/articles"
 
 const HomePage = () => {
