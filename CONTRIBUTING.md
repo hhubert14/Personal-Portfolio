@@ -40,6 +40,5 @@ Refer to [this](/CODE_OF_CONDUCT.md)
 
 If you have any questions or need further assistance, feel free to reach out to me:
 - Email: hubert.huang.business@gmail.com
-- LinkedIn: [Hubert Huang](https://www.linkedin.com/in/huberthuang1/)
 
 Thank you for your contributions!
