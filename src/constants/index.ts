@@ -107,13 +107,13 @@ export const Skills_row_2 = [
     },
     {
         skill_name: "Html 5",
-        Image: "/html.png",
+        Image: "/skills/html.png",
         width: 80,
         height: 80,
     },
     {
         skill_name: "Css",
-        Image: "/css.png",
+        Image: "/skills/css.png",
         width: 80,
         height: 80,
     },
