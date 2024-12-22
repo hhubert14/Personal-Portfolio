@@ -3,8 +3,8 @@ import { ArrowLeftIcon } from "@heroicons/react/24/solid"
 import { getArticleData } from "@/lib/articles"
 import Sidebar from "@/components/articles/Sidebar"
 
-const Article = async ({ params }: { params: { slug: string } }) => {
-    const articleData = await getArticleData(params.slug)
+const Article = async ({ params }: { params: Promise<{ slug: string }> }) => {
+    const articleData = await getArticleData((await params).slug)
     console.log(`articleData.contentHtml: ${articleData.contentHtml}`)
 
     if (!articleData) {
