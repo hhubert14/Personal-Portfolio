@@ -46,7 +46,11 @@ const HeroContent = () => {
                     variants={slideInFromLeft(0.8)}
                     className="text-lg text-gray-400 my-5 max-w-[600px]"
                 >
-                    I&apos;m a junior majoring in Computer Science and Mathematics with experience in artificial intelligence, software engineering, and mathematics. Dive into my projects, skills, and articles to see how I bring ideas to life!
+                    I&apos;m a junior majoring in Computer Science and
+                    Mathematics with experience in artificial intelligence,
+                    software engineering, and mathematics. Dive into my
+                    projects, skills, and articles to see how I bring ideas to
+                    life!
                 </motion.p>
                 <motion.a
                     variants={slideInFromLeft(1)}
@@ -54,6 +58,15 @@ const HeroContent = () => {
                     href="/#skills"
                 >
                     Learn More!
+                </motion.a>
+                <motion.a
+                    variants={slideInFromLeft(1.3)}
+                    className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[150px] text-xs ml-6"
+                    href="https://github.com/hhubert14/Personal-Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Source Code
                 </motion.a>
             </div>
 

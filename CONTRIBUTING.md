@@ -5,6 +5,7 @@ Thank you for your interest in contributing to my project! I welcome contributio
 ### Reporting Bugs
 
 If you find a bug, please open an issue on GitHub with the following information:
+
 - A clear and descriptive title.
 - A detailed description of the problem.
 - Steps to reproduce the issue.
@@ -13,6 +14,7 @@ If you find a bug, please open an issue on GitHub with the following information
 ### Suggesting Enhancements
 
 If you have an idea for an enhancement, please open an issue on GitHub with the following information:
+
 - A clear and descriptive title.
 - A detailed description of the enhancement.
 - Any relevant examples or mockups.
@@ -20,6 +22,7 @@ If you have an idea for an enhancement, please open an issue on GitHub with the 
 ### Submitting Code Changes
 
 To submit code changes, please follow these steps:
+
 1. Fork the repository.
 2. Create a new branch.
 3. Make your changes on that new branch.
@@ -29,6 +32,7 @@ To submit code changes, please follow these steps:
 ### Improving Documentation
 
 If you want to improve the documentation, you can:
+
 - Suggest improvements by opening an issue.
 - Submit changes directly by following the steps for submitting code changes.
 
@@ -39,6 +43,7 @@ Refer to [this](/CODE_OF_CONDUCT.md)
 ## Contact
 
 If you have any questions or need further assistance, feel free to reach out to me:
+
 - Email: hubert.huang.business@gmail.com
 
 Thank you for your contributions!
