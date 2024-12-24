@@ -10,7 +10,6 @@ const ArticleItemList = ({ category, articles }: Props) => {
     return (
         <div className="flex flex-col items-center gap-5">
             <h2 className="text-4xl text-center">{category}</h2>
-            {/* <div className="border border-white w-20 h-20">Placeholder</div> */}
             <div className="flex flex-col items-center gap-2.5 text-lg">
                 {articles.map((article, id) => (
                     <Link

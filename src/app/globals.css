@@ -113,3 +113,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+[id^="user-content-"] {
+    scroll-margin-top: 75px;
+}
