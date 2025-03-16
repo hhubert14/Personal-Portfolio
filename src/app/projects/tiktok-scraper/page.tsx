@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function TikTokScraper() {
     return (
@@ -97,6 +98,9 @@ export default function TikTokScraper() {
                         The system efficiently aggregates career-related content that can be used for career guidance, educational purposes, or market research. It demonstrates expertise in web automation, API integration, and data management while solving a real-world content aggregation challenge.
                     </p>
                 </section>
+                <div>
+                    See <Link className="underline hover:text-purple-500" href={"https://github.com/hhubert14/tiktok-scraper-automation"}>GitHub Repository</Link>
+                </div>
             </div>
         </div>
     )

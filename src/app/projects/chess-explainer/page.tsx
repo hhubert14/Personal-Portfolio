@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ChessExplainer() {
     return (
@@ -89,6 +90,9 @@ export default function ChessExplainer() {
                 <p className="text-gray-300 mt-8">
                     This project demonstrates the application of state-of-the-art language models to specialized domains, combining the pattern recognition capabilities of LLMs with domain-specific knowledge in chess strategy and tactics.
                 </p>
+                <div>
+                    See <Link className="underline hover:text-purple-500" href={"https://github.com/hhubert14/chess-ai"}>GitHub Repository</Link>
+                </div>
             </div>
         </div>
     )
