@@ -68,6 +68,15 @@ const HeroContent = () => {
                 >
                     Source Code
                 </motion.a>
+                <motion.a
+                    variants={slideInFromLeft(1.5)}
+                    className="text-white cursor-pointer max-w-[150px] text-xs ml-2 underline hover:text-purple-500"
+                    href="https://docs.google.com/document/d/1OS1_ftA-3G3bTr6E2HA4G9cYfKe4u9A7uaq6UYuHzaU/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Long Formal Report on LLMs
+                </motion.a>
             </div>
 
             <motion.div
